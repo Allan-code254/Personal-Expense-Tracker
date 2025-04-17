@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+h2 {
+  color: #333;
+}
+
+.welcome-message {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.welcome-message h1 {
+  margin: 0;
+}
+
+.welcome-message p {
+  margin: 5px 0;
+}
+
+.category {
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="month"] {
+  padding: 8px;
+  margin: 5px;
+  width: 200px;
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

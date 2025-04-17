@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Budget Allocator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="welcome-message">
+    <h1>Welcome to SmartBudget!</h1>
+    <p>Ready to take control of your finances?</p>
+    <p><em>"Success is the sum of small efforts, repeated day in and day out." – Robert Collier</em></p>
+  </div>
+
+  <h2>Personal Budget Allocator</h2>
+  <form action="save.php" method="POST" id="budgetForm">
+    <label for="income">Enter your monthly income (KES):</label><br>
+    <input type="number" name="income" required><br><br>
+
+    <label for="month">Select the month:</label><br>
+    <input type="month" name="budget_month" required><br><br>
+
+    <div id="categories">
+      <h4>Budget Categories (with percentages):</h4>
+      <div class="category">
+        <input type="text" name="category[]" value="Savings">
+        <input type="number" name="percent[]" value="25"> %
+      </div>
+      <div class="category">
+        <input type="text" name="category[]" value="Transport">
+        <input type="number" name="percent[]" value="15"> %
+      </div>
+      <div class="category">
+        <input type="text" name="category[]" value="Food">
+        <input type="number" name="percent[]" value="20"> %
+      </div>
+    </div>
+
+    <button type="button" onclick="addCategory()">+ Add Category</button><br><br>
+    <button type="submit">Save Budget & View Allocations</button>
+  </form>
+
+  <script>
+    // Function to dynamically add more categories
+    function addCategory() {
+      const container = document.getElementById('categories');
+      const div = document.createElement('div');
+      div.classList.add('category');
+      div.innerHTML = `
+        <input type="text" name="category[]" placeholder="Category Name">
+        <input type="number" name="percent[]" value="0"> %
+      `;
+      container.appendChild(div);
+    }
+  </script>
+</body>
+</html>
